@@ -53,68 +53,6 @@ int main() {
                     } while (op_proceso < 1 || op_proceso > 5);
                     if(op_proceso == 1) {
                         if(cont_p < MAX) {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             Proceso *ptrP = &lista[cont_p]; // Puntero directo estilo profa
                             cout << "\nID: "; cin >> ptrP->id; 
                             cout << "Nombre: "; cin >> ptrP->nombre;

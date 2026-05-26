@@ -103,6 +103,13 @@
                         for(int i = 0; i < cont_p; i++) { 
                             if(lista[i].id == id) { 
                                 cout << "Nueva prioridad: "; cin >> prio; 
+                                lista[i].prioridad = prio; 
+                                cout << "\n[EXITO] Prioridad actualizada.\n"; enc = true; break; 
+                            } 
+                        }
+                        if(!enc) cout << "\n[ERROR] Proceso no encontrado.\n"; 
+                    }
+                } while (op_proceso != 5); break;
 
 
 

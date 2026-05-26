@@ -96,6 +96,43 @@ int main() {
                         if(!enc) cout << "\n[ERROR] Proceso no encontrado.\n"; 
                     }
                 } while (op_proceso != 5); break;
+            }
+            case 2: { 
+                int op_cpu;
+                do {
+                    cout << "\n--- 2. PLANIFICADOR DE CPU ---";
+                    cout << "\n1. Encolamiento de procesos segun prioridad";
+                    cout << "\n2. Desencolamiento y ejecucion";
+                    cout << "\n3. Visualizacion de la cola actual";
+                    cout << "\n4. Volver al menu principal";
+                    do {
+                        cout << "\nOpcion: "; cin >> op_cpu 
+                        if (op_cpu < 1 || op_cpu > 4) {
+                            cout << "ERROR, Opcion invalida.";
+                        }
+                    } while (op_cpu < 1 || op_cpu > 4);
+                    if(op == 1) {
+                        if(cont_c < MAX && cont_p > 0) {
+                            Proceso *ptrCPU = &cola_cpu[cont_c]; 
+                            Proceso *ptrOrig = &lista[cont_p - 1]; 
+                            ptrCPU->id = ptrOrig->id; ptrCPU->nombre = ptrOrig->nombre; 
+                            ptrCPU->prioridad = ptrOrig->prioridad; ptrCPU->memoria = ptrOrig->memoria;
+                            ptrCPU->estado = "En CPU"; ptrOrig->estado = "En CPU"; 
+                            cont_c++;
+                            cout << "\n[EXITO] Proceso cambiado a 'En CPU' y encolado.\n";
+                        } else cout << "\n[ERROR] No hay procesos disponibles o la CPU esta llena.\n";
+                    }
+                    else if(op_cpu == 2) { 
+                        if(cont_c == 0) cout << "\n[AVISO] No hay procesos para ejecutar.\n";
+                        else {
+                            cout << "\n========================================\nEJECUTANDO: " << cola_cpu[0].nombre << " (ID: " << cola_cpu[0].id << ")\n========================================\n";
+                            for(int j = 0; j < cont_c - 1; j++) cola_cpu[j] = cola_cpu[j + 1]; 
+                            cont_c--;
+                        }
+                    }
+                    else if(op_cpu == 3) {
+                            
+
 
 
 

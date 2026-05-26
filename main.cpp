@@ -1,6 +1,18 @@
-
-
-
+#include <iostream>
+#include <string>
+#include <cstdlib> 
+#define MAX 30
+using namespace std;
+struct Proceso { 
+    int id; 
+    string nombre; 
+    int prioridad; 
+    int memoria; 
+    string estado; 
+struct Memoria { 
+    int cantidad_bloques; 
+    int id_proceso; 
+};
 
 
 

@@ -77,7 +77,14 @@ void Modificar_Prioridad(NodoProceso* cabeza, int id_buscado, int nueva_prio) {
      }
     cout << "\n[ERROR] Proceso no encontrado.\n";
 }
-void Push_Memoria(NodoMmemoria*& tope, int cantidad
+void Push_Memoria(NodoMmemoria*& tope, int cantidad, int id) {
+    NodoMemoria* nuevo = new NodoMemoria();
+    nuevo->cantidad_bloques = cantidad;
+    nuevo->id_proceso = id;
+    nuevo->siguiente = tope;
+    tope = nuevo;
+    cout << "[MEMORIA] Push: " << cantidad << " bloques asignados (Proceso Id " << id << ").\n;
+}   
 
 
 

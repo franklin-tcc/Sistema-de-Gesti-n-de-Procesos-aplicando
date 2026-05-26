@@ -13,10 +13,46 @@ struct Memoria {
     int cantidad_bloques; 
     int id_proceso; 
 };
-
-
-
-
+int main() {
+    Proceso lista[MAX];     int cont_p = 0;
+    Proceso cola_cpu[MAX];  int cont_c = 0;
+    Memoria v_mem[MAX];     int cont_m = 0;
+    
+    int opcion_principal;
+    do {
+        cout << "\n==============================================";
+        cout << "\n    SIMULADOR DE SISTEMA OPERATIVO V2.0";
+        cout << "\n==============================================";
+        cout << "\n1. Gestor de Procesos (Lista Enlazada)";
+        cout << "\n2. Planificador de CPU (Cola de Prioridad)";
+        cout << "\n3. Gestor de Memoria (Pila)";
+        cout << "\n4. Salir";
+        cout << "\n----------------------------------------------";
+        do {
+            cout << "\nSeleccione una opcion: ";
+            cin >> opcion_principal;
+            if(opcion_principal < 1 || opcion_principal > 4) {
+                cout << "ERROR, opcion invalida intente de nuevo";
+            }
+        } while (opcion_principal < 1 || opcion_principal > 4);
+        switch(Opcion_principal) {
+            case 1: {
+                int op_principal;
+                do{
+                    cout << "\n--- 1. GESTOR DE PROCESOS ---";
+                    cout << "\n1. Insercion de nuevos procesos";
+                    cout << "\n2. Eliminacion de procesos";
+                    cout << "\n3. Busqueda de procesos por ID";
+                    cout << "\n4. Modificacion de la prioridad";
+                    cout << "\n5. Volver al menu principal";
+                    do[
+                       cout << "\nOpcion: "; cin >> op_proceso;
+                       if (op_proceso < 1 || op_proceso > 5) {
+                           cout << "ERROR, Opcion invalida. ";
+                       }
+                    } while (op_proceso < 1 || op_proceso > 5);
+                    if(op_proceso == 1) {
+                        if(cont_p < MAX) {
 
 
 
